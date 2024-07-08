@@ -1,14 +1,9 @@
 #!/bin/bash
-
-echo -e "
-\033[31m█▀▄▀█ █▀█ █▀ ▀█▀ █▀█ █▀▀ █▄░█ █▀▀ █▀█
-\033[31m█░▀░█ █▄█ ▄█ ░█░ █▀▄ ██▄ █░▀█ █▄█ █▄█"
-
 x=${-%%i*}
 iatest=$((${#x} + 1))
 
 #######################################################
-# SOURCED ALIAS'S AND SCRIPTS BY zachbrowne.me
+# SOURCED ALIAS'S AND SCRIPTS BY zachbrowne.me 
 #######################################################
 
 # Source global definitions
@@ -55,10 +50,10 @@ if [[ $iatest -gt 0 ]]; then bind "set completion-ignore-case on"; fi
 if [[ $iatest -gt 0 ]]; then bind "set show-all-if-ambiguous On"; fi
 
 # Set the default editor
-export EDITOR=nvim
-export VISUAL=nvim
-alias nano='nvim'
-alias vim='nvim'
+export EDITOR=nano
+export VISUAL=nano
+alias nano='nano'
+alias vim='nano'
 
 # To have colors for ls and all grep commands such as grep, egrep and zgrep
 export CLICOLOR=1
@@ -94,12 +89,55 @@ alias mkdir='mkdir -p'
 alias ps='ps auxf'
 alias ping='ping -c 10'
 alias less='less -R'
-alias vi='nvim'
+alias vi='nano'
 
 # Alias's for multiple directory listing commands
 alias la='ls -Alh' # show hidden files
 alias ls='ls -aFh --color=always' # add colors and file type extensions
 alias ll='ls -Fls' # long listing format
+
+#Other Alias's 
+alias sci='ssh-copy-id'
+alias ssh='kitten ssh'
+alias updateall='sudo dnf update --refresh'
+alias z='cd'
+alias cat='bat'
+alias tracert='mtr'
+alias nano='sudo nano'
+alias c='clear'
+alias reboot='systemctl reboot'
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .4='cd ../../../../..'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias sha1='openssl sha1'
+alias mkdir='mkdir -pv'
+alias h='history'
+alias j='jobs -l'
+alias ping='ping -c 10'
+alias fastping='ping -c 100 -s.2'
+alias ports='netstat -tulanp'
+alias meminfo='free -m -l -t'
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+alias cpuinfo='lscpu'
+alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
+
+#Alias's for connecting to servers via ssh
+alias sshagh='kitten ssh $USER@agh'
+alias sshhap='kitten ssh $USER@hap'
+alias sshfed='kitten ssh $USER@fed'
+alias sshnc='kitten ssh $USER@nc'
+alias sshduo='kitten ssh $USER@duo'
+alias sshvault='kitten ssh $USER@vault'
 
 # Extracts any archive(s) (if unp isn't installed)
 extract () {
